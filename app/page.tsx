@@ -9,11 +9,18 @@ export default function Home() {
             Breaking News!
           </h1>
 
-            <h2 className="text-customRed text-2xl font-bold bg-black/[.05] dark:bg-white/[.06] py-0.5 rounded font-semibold">
-            Sell all your stocks
+            <h2 className="text-customRed text-2xl font-bold bg-black/[.05] dark:bg-white/[.06] py-0.5 rounded">
+            Sell all of your stocks
             </h2>
 
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>
+              `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+              industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+              and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap 
+              into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the 
+              release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+              software like Aldus PageMaker including versions of Lorem Ipsum.`
+            </p>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
