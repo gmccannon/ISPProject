@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
+import Link from 'next/link';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,26 +17,19 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <Navbar>
-          <NavbarContent className="sm:flex gap-9 pl-5">
-            <NavbarItem>
-              <Link href="/news">News</Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link href="/contact">Contact</Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link href="/stocks">Stocks</Link>
-            </NavbarItem>
-          </NavbarContent>
-            <div className="pl-40">
-              <div className="pl-40">
-                <NavbarBrand className="text-5xl bg-red-500 font-bold flex">
-                  <Link href="/">Home</Link>
-                </NavbarBrand>
-              </div>
-            </div>
-          </Navbar>
+    <nav className="p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex-1 flex justify-center">
+          <h1 className="text-white text-2xl">Based News</h1>
+        </div>
+        <div className="hidden md:flex space-x-4">
+          <Link href="/" className="text-white"> Home </Link>
+          <Link href="/news" className="text-white"> News </Link>
+          <Link href="/contact" className="text-white"> Contact </Link>
+          <Link href="/stocks" className="text-white"> Stocks </Link>
+        </div>
+      </div>
+    </nav>
         {children}
       </body>
     </html>
