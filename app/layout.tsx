@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +15,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
       >
+        <Navbar className="flex justify-start">
+          <NavbarContent className="hidden sm:flex gap-4 pl-3">
+            <NavbarItem>
+              <Link href="/news">News</Link>
+            </NavbarItem>
+            <NavbarItem>
+              <Link href="/contact">Contact</Link>
+            </NavbarItem>
+          </NavbarContent>
+          <div className="flex justify-center">
+            <NavbarBrand className="bg-red-500 font-bold text-inherit flex mx-auto">
+              <Link className="text-5xl" href="/">Home</Link>
+            </NavbarBrand>
+          </div>
+          </Navbar>
         {children}
       </body>
     </html>
