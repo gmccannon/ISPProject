@@ -17,20 +17,25 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <Navbar className="flex justify-start">
-          <NavbarContent className="hidden sm:flex gap-4 pl-3">
+        <Navbar>
+          <NavbarContent className="sm:flex gap-9 pl-5">
             <NavbarItem>
               <Link href="/news">News</Link>
             </NavbarItem>
             <NavbarItem>
               <Link href="/contact">Contact</Link>
             </NavbarItem>
+            <NavbarItem>
+              <Link href="/stocks">Stocks</Link>
+            </NavbarItem>
           </NavbarContent>
-          <div className="flex justify-center">
-            <NavbarBrand className="bg-red-500 font-bold text-inherit flex mx-auto">
-              <Link className="text-5xl" href="/">Home</Link>
-            </NavbarBrand>
-          </div>
+            <div className="pl-40">
+              <div className="pl-40">
+                <NavbarBrand className="text-5xl bg-red-500 font-bold flex">
+                  <Link href="/">Home</Link>
+                </NavbarBrand>
+              </div>
+            </div>
           </Navbar>
         {children}
       </body>
