@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "framer-motion": "^11.11.17",
+    "mongoose": "^8.8.2",
     "next": "15.0.3",
     "pnpm": "^9.13.2",
     "react": "19.0.0-rc-66855b96-20241106",
