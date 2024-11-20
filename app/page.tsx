@@ -6,13 +6,6 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <h1 className="text-4xl font-bold text-9xl">
-            Based News
-          </h1>
-
-          <h1 className="text-gray-700">
-            or maybe let's call it
-          </h1>
-          <h1 className="text-4xl font-bold text-9xl">
             What's Poppin?
           </h1>
 

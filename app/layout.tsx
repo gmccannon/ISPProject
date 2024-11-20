@@ -26,7 +26,7 @@ export default function RootLayout({
           <Link href="/contact"> Contact </Link>
         </div>
         <div className="flex-1 flex justify-end pr-5">
-          <h1 className="text-white text-5xl text-bold">Based News</h1>
+          <h1 className="text-white text-5xl text-bold">What's Poppin?</h1>
         </div>
       </div>
     </nav>
