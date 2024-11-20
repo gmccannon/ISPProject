@@ -1,29 +1,39 @@
+interface NewsArticle {
+  title: string;
+  subtitle: string;
+  content: string;
+}
+
+let sampleArticles: NewsArticle[] = [
+  {
+    title: "Article 1",
+    subtitle: "Subtitle 1",
+    content: "Content 1",
+  },
+  {
+    title: "Article 2",
+    subtitle: "Subtitle 2",
+    content: "Content 2",
+  },
+  {
+    title: "Article 3",
+    subtitle: "Subtitle 3",
+    content: "Content 3",
+  },
+];
+
 export default function News() {
   return (
     <div className="min-h-screen">
-      <h1 className="p-5 text-2xl justify-center flex">Contact Me</h1>
+      <h1 className="p-5 text-2xl justify-center flex">News</h1>
       <div className="min-h-screen flex flex-col items-center">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
-        />
-        <input
-          type="text"
-          placeholder="Credit Card number"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
-        />
-        <input
-          type="text"
-          placeholder="Social Security number"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
-        />
-        <button className="p-2 bg-blue-500 text-white rounded">Submit</button>
+        {sampleArticles.map((article) => (
+          <div className="w-1/2 p-5 border border-gray-300 rounded-lg m-5">
+            <h2 className="text-2xl text-bold">{article.title}</h2>
+            <h3 className="text-lg">{article.subtitle}</h3>
+            <p>{article.content}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
