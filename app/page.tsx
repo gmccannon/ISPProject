@@ -5,21 +5,22 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <h1 className="text-4xl font-bold text-orange-500">
-            Breaking News!
+          <h1 className="text-4xl font-bold text-9xl">
+            Based News
           </h1>
 
-            <h2 className="text-customRed text-2xl font-bold bg-black/[.05] dark:bg-white/[.06] py-0.5 rounded">
-            Sell all of your stocks
-            </h2>
+          <h1 className="text-gray-700">
+            or maybe let's call it
+          </h1>
+          <h1 className="text-4xl font-bold text-9xl">
+            What's Poppin?
+          </h1>
 
-            <p>
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
-            </p>
+          <p className="pt-4 text-gray-500 text-2xl font-bold bg-black/[.05] dark:bg-white/[.06] py-0.5 rounded">
+            One stop shop for all your news needs. We
+            provide you with the latest news from around the world.
+            Stay up to date with the latest news, trends, and events
+          </p>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
