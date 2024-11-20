@@ -9,7 +9,7 @@ export default function Home() {
             What's Poppin?
           </h1>
 
-          <p className="pt-4 text-gray-500 text-2xl font-bold bg-black/[.05] dark:bg-white/[.06] py-0.5 rounded">
+          <p className="pt-4 text-gray-500 text-2xl font-bold py-0.5 rounded">
             One stop shop for all your news needs. We
             provide you with the latest news from around the world.
             Stay up to date with the latest news, trends, and events
