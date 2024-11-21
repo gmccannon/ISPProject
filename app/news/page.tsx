@@ -4,7 +4,7 @@ interface NewsArticle {
   content: string;
 }
 
-let sampleArticles: NewsArticle[] = [
+const sampleArticles: NewsArticle[] = [
   {
     title: "Article 1",
     subtitle: "Subtitle 1",
