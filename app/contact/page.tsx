@@ -6,22 +6,22 @@ export default function Contact() {
         <input
           type="text"
           placeholder="Your Name"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
+          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded text-black"
         />
         <input
           type="email"
           placeholder="Email"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
+          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded text-black"
         />
         <input
           type="text"
           placeholder="Credit Card number"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
+          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded text-black"
         />
         <input
           type="text"
           placeholder="Social Security number"
-          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded"
+          className="mb-4 w-full max-w-md p-2 border border-gray-300 rounded text-black"
         />
         <button className="p-2 bg-blue-500 text-white rounded">Submit</button>
       </div>

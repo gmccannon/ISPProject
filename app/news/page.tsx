@@ -25,7 +25,7 @@ const SearchBox = ({ onSearch }: { onSearch: (query: string) => void }) => {
         value={query}
         onChange={handleSearch}
         placeholder="Search for news..."
-        className="p-2 border border-gray-300 rounded-lg"
+        className="p-2 border border-gray-300 rounded-lg text-black"
       />
     </div>
   );
