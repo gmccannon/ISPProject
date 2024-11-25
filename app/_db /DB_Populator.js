@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const axios = require('axios');
-require('dotenv').config();
+import mongoose from 'mongoose';
+import axios from 'axios';
+import 'dotenv/config';
 
 // Define Mongoose Schema
 const newsSchema = new mongoose.Schema({
