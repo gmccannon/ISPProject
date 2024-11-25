@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "News website",
 };
 
-export default function RootLayout({
+export default function News({
   children,
 }: Readonly<{
   children: React.ReactNode;

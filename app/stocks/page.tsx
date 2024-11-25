@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Stocks() {
+function getStock(symbol: string) {
   const [stockData, setStockData] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function Stocks() {
         const response = await axios.get('https://www.alphavantage.co/query', {
           params: {
             function: 'TIME_SERIES_DAILY',
-            symbol: 'AAPL',
+            symbol: 'TSLA',
             apikey: 'YOUR_API_KEY',
           },
         });
@@ -24,6 +24,12 @@ export default function Stocks() {
 
     fetchStockData();
   }, []);
+
+  return stockData;
+}
+
+export default function Stocks() {
+  const stockData = getStock('AAPL');
 
   return (
     <div className="min-h-screen">

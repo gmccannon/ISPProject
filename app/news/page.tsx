@@ -27,8 +27,8 @@ export default function News() {
     <div className="min-h-screen">
       <h1 className="p-5 text-4xl text-bold justify-center flex">News</h1>
       <div className="min-h-screen flex flex-col items-center">
-        {sampleArticles.map((article) => (
-          <div className="w-1/2 p-5 border border-gray-300 rounded-lg m-5">
+        {sampleArticles.map((article, index) => (
+          <div key={index} className="w-1/2 p-5 border border-gray-300 rounded-lg m-5">
             <h2 className="text-2xl text-bold">{article.title}</h2>
             <h3 className="text-lg">{article.subtitle}</h3>
             <p>{article.content}</p>
