@@ -9,12 +9,13 @@ interface NewsArticle {
   url: string;
 }
 
-
 const SearchBox = ({ onSearch }: { onSearch: (query: string) => void }) => {
   const [query, setQuery] = useState('');
 
-  const handleSearch = () => {
-    onSearch(query);
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = e.target.value;
+    setQuery(newQuery);
+    onSearch(newQuery);
   };
 
   return (
@@ -22,25 +23,24 @@ const SearchBox = ({ onSearch }: { onSearch: (query: string) => void }) => {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleSearch}
         placeholder="Search for news..."
         className="p-2 border border-gray-300 rounded-lg"
       />
-      <button onClick={handleSearch} className="ml-2 p-2 bg-blue-500 text-white rounded-lg">
-        Search
-      </button>
     </div>
   );
 };
 
 export default function News() {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState<NewsArticle[]>([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const response = await axios.get('/api/news_today');  // Ensure this URL matches the API route
         setArticles(response.data);
+        setFilteredArticles(response.data); // Initialize filtered articles
       } catch (error) {
         console.error('Error fetching articles:', error);
       }
@@ -49,19 +49,23 @@ export default function News() {
     fetchArticles();
   }, []);
 
+  const handleSearch = (query: string) => {
+    const filtered = articles.filter(article =>
+      article.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setFilteredArticles(filtered);
+  };
+
   return (
     <div className="min-h-screen">
       <h1 className="p-5 text-4xl text-bold justify-center flex">News Today</h1>
 
       <div className="flex justify-center">
-        <SearchBox onSearch={(query) => {
-          // Implement the search functionality here
-          console.log('Search query:', query);
-        }} />
+        <SearchBox onSearch={handleSearch} />
       </div>
 
       <div className="min-h-screen flex flex-col items-center">
-        {articles.map((article, index) => (
+        {filteredArticles.map((article, index) => (
           <div key={index} className="w-1/2 p-5 border border-gray-300 rounded-lg m-5">
             <h2 className="text-2xl text-bold">{article.title}</h2>
             <p>{article.description}</p>
