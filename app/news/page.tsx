@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -13,7 +15,7 @@ export default function News() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('/api/news');
+        const response = await axios.get('/api/news');  // Ensure this URL matches the API route
         setArticles(response.data);
       } catch (error) {
         console.error('Error fetching articles:', error);
