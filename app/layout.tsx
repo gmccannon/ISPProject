@@ -18,14 +18,14 @@ export default function RootLayout({
         className={`antialiased`}
       >
     <nav className="p-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center font-courier">
         <div className="hidden md:flex space-x-4 text-white">
           <Link href="/"> Home </Link>
           <Link href="/news"> News </Link>
           <Link href="/stocks"> Stocks </Link>
           <Link href="/contact"> Contact </Link>
         </div>
-        <div className="flex-1 flex justify-end pr-5">
+        <div className="flex-1 flex justify-end pr-5 font-courier">
           <h1 className="text-white text-5xl text-bold">What&apos;s Poppin?</h1>
         </div>
       </div>
