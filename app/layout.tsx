@@ -23,7 +23,7 @@ export default function RootLayout({
           <Link href="/"> Home </Link>
           <Link href="/news_today"> Today </Link>
           <Link href="/news"> News </Link>
-          <Link href="/stocks"> Stocks </Link>
+          {/* <Link href="/stocks"> Stocks </Link> */}
           <Link href="/contact"> Contact </Link>
         </div>
         <div className="flex-1 flex justify-end pr-5 font-courier">
