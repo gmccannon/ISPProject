@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import axios from 'axios';
-require('dotenv').config();
+import 'dotenv/config';
 
 // Define Mongoose Schema
 const newsSchema = new mongoose.Schema({
