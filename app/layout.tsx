@@ -17,7 +17,7 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-    <nav className="p-4">
+    <nav className="p-4 bg-black">
       <div className="container mx-auto flex justify-between items-center font-courier">
         <div className="hidden md:flex space-x-4 text-white">
           <Link href="/"> Home </Link>
