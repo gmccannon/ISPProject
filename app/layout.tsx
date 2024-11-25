@@ -21,6 +21,7 @@ export default function RootLayout({
       <div className="container mx-auto flex justify-between items-center font-courier">
         <div className="hidden md:flex space-x-4 text-white">
           <Link href="/"> Home </Link>
+          <Link href="/news_today"> Today </Link>
           <Link href="/news"> News </Link>
           <Link href="/stocks"> Stocks </Link>
           <Link href="/contact"> Contact </Link>
