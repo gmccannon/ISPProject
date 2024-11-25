@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        courier: ['"Courier New"', "Courier", "monospace"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
