@@ -10,21 +10,27 @@ const newsSchema = new mongoose.Schema({
   publishedAt: Date,
 });
 
-// Define the model
-const News = mongoose.model('AllNews', newsSchema);
+// Check if the model is already compiled to prevent recompilation errors
+const News = mongoose.models.AllNews || mongoose.model('AllNews', newsSchema);
+
+// Create a function to connect to MongoDB
+async function connectToMongoDB() {
+  if (mongoose.connection.readyState === 0) {
+    console.log('Connecting to MongoDB...');
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected to MongoDB');
+  } else {
+    console.log('MongoDB is already connected');
+  }
+}
 
 // API route handler for GET request
 export async function GET() {
   try {
-    // Log connection status
-    console.log('Checking MongoDB connection...');
-    if (!mongoose.connections[0].readyState) {
-      console.log('Connecting to MongoDB...');
-      await mongoose.connect(process.env.MONGODB_URI);
-      console.log('Connected to MongoDB');
-    } else {
-      console.log('MongoDB is already connected');
-    }
+    await connectToMongoDB();
 
     // Fetch all articles
     const articles = await News.find({}).sort({ publishedAt: -1 });
