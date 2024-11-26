@@ -38,9 +38,9 @@ export default function News() {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await axios.get('/api/news');  // Ensure this URL matches the API route
+        const response = await axios.get('/api/news');
         setArticles(response.data);
-        setFilteredArticles(response.data); // Initialize filtered articles
+        setFilteredArticles(response.data);
       } catch (error) {
         console.error('Error fetching articles:', error);
       }
