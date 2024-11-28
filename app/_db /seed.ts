@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import axios from 'axios';
 import 'dotenv/config';
-import { article } from 'framer-motion/client';
 
 // Define Mongoose Schema
 const newsSchema = new mongoose.Schema({
