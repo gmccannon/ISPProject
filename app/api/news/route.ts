@@ -17,8 +17,9 @@ const News = mongoose.models.AllNews || mongoose.model('AllNews', newsSchema);
 async function connectToMongoDB() {
   if (mongoose.connection.readyState === 0) {
     console.log('Connecting to MongoDB...');
-    if (process.env.MONGODB_URI)
-    await mongoose.connect(process.env.MONGODB_URI);
+    if (process.env.MONGODB_URI) {
+      await mongoose.connect(process.env.MONGODB_URI);
+    }
     console.log('Connected to MongoDB');
   } else {
     console.log('MongoDB is already connected');

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import axios from 'axios';
 import 'dotenv/config';
+import { article } from 'framer-motion/client';
 
 // Define Mongoose Schema
 const newsSchema = new mongoose.Schema({
@@ -11,6 +12,18 @@ const newsSchema = new mongoose.Schema({
   source: String,
   publishedAt: Date,
 });
+
+// Define TypeScript types
+interface Article {
+  title?: string;
+  description?: string;
+  content?: string;
+  url?: string;
+  source?: {
+    name?: string;
+  };
+  publishedAt?: string;
+}
 
 const News = mongoose.model('AllNews', newsSchema);
 
@@ -40,14 +53,16 @@ async function test() {
       console.log(`Fetched ${response.data.articles.length} articles from NewsAPI.`);
 
       // Save all articles to MongoDB
-      const savedArticles = await News.insertMany(response.data.articles.map(article => ({
-        title: article.title,
-        description: article.description,
-        content: article.content,
-        url: article.url,
-        source: article.source.name,
-        publishedAt: new Date(article.publishedAt),
-      })));
+      const savedArticles = await News.insertMany(
+        response.data.articles.map((article: Article) => ({
+          title: article.title || 'Untitled',
+          description: article.description || 'No description',
+          content: article.content || 'No content',
+          url: article.url || 'No URL',
+          source: article.source && article.source.name ? article.source.name : 'Unknown Source',
+          publishedAt: article.publishedAt ? new Date(article.publishedAt) : null,
+        }))
+      );
 
       console.log('All articles saved to MongoDB:', savedArticles);
     } else {
