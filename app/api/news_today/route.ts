@@ -11,16 +11,15 @@ const newsSchema = new mongoose.Schema({
 });
 
 // Check if the model is already compiled to prevent recompilation errors
-const News = mongoose.models.AllNews || mongoose.model('AllNews', newsSchema);
+const News = mongoose.models.News || mongoose.model('News', newsSchema);
 
 // Create a function to connect to MongoDB
 async function connectToMongoDB() {
   if (mongoose.connection.readyState === 0) {
     console.log('Connecting to MongoDB...');
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    if (process.env.MONGODB_URI) {
+      await mongoose.connect(process.env.MONGODB_URI);
+    }
     console.log('Connected to MongoDB');
   } else {
     console.log('MongoDB is already connected');
