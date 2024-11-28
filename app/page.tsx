@@ -8,8 +8,8 @@ export default function Home() {
           What&apos;s Poppin?
         </h1>
         <p className="text-4xl text-slate-400">
-          One stop shop for all your news needs. We provide you with the latest
-          news from around the world. Stay up to date with the latest news, trends, and events.
+          One-stop-shop for all your news needs. We provide you with the latest
+          news from around the world. Stay up to date with news, trends, and events.
         </p>
       </main>
     </div>

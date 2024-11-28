@@ -57,7 +57,7 @@ export default function News() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       <h1 className="p-5 text-4xl text-bold justify-center flex">News</h1>
 
       <div className="flex justify-center">
